@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/primerFragment">
+
+    <fragment
+        android:id="@+id/primerFragment"
+        android:name="com.example.ejemplonavegacion.PrimerFragment"
+        android:label="fragment_primer"
+        tools:layout="@layout/fragment_primer" >
+        <action
+            android:id="@+id/action_primerFragment_to_segundoFragment"
+            app:destination="@id/segundoFragment"
+            app:popUpTo="@id/primerFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_primerFragment_to_tercerFragment"
+            app:destination="@id/tercerFragment"
+            app:popUpTo="@id/primerFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="nombre"
+            app:argType="string"
+            android:defaultValue="Pepito" />
+    </fragment>
+    <fragment
+        android:id="@+id/segundoFragment"
+        android:name="com.example.ejemplonavegacion.SegundoFragment"
+        android:label="fragment_segundo"
+        tools:layout="@layout/fragment_segundo" >
+        <argument
+            android:name="nombre"
+            app:argType="string"
+            android:defaultValue="android" />
+    </fragment>
+    <fragment
+        android:id="@+id/tercerFragment"
+        android:name="com.example.ejemplonavegacion.tercerFragment"
+        android:label="fragment_tercer2"
+        tools:layout="@layout/fragment_tercer2" >
+
+        <action
+            android:id="@+id/action_tercerFragment_to_cuartoFragment3"
+            app:destination="@id/cuartoFragment3"
+            app:popUpTo="@id/primerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cuartoFragment3"
+        android:name="com.example.ejemplonavegacion.cuartoFragment"
+        android:label="fragment_cuarto"
+        tools:layout="@layout/fragment_cuarto" />
+
+
+</navigation>
